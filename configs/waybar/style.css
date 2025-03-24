@@ -1,0 +1,194 @@
+/* Reset all styles */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+    min-height: 0;
+    padding: 0;
+    /* You can use this to disable background by default all over bar */
+    /* background: transparent; */
+}
+
+/* The whole bar */
+window#waybar {
+    background: rgba(30, 30, 46, 0.85);
+    border-radius: 8px;
+    color: #cdd6f4;
+    margin-top: 4px;
+}
+
+/* Each module on the bar */
+#clock,
+#cpu,
+#custom-launcher,
+#custom-mediaplayer,
+#custom-separator,
+#custom-wallpaper,
+#disk,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#window,
+#workspaces,
+#custom-powermenu {
+    border-radius: 8px;
+    margin: 5px 0px 5px 5px;
+    padding: 0 8px; /* Uniform padding */
+}
+
+#custom-mediaplayer,
+#custom-powermenu {
+    margin: 5px 5px 5px 0px;
+}
+
+/* Each module on the bar */
+#workspaces button {
+    background: transparent;
+    color: #cdd6f4;
+    padding: 0 5px;
+    border-radius: 6px;
+    margin: 2px;
+}
+
+#workspaces button.active {
+    background: #7aa2f7;
+    color: #1e1e2e;
+}
+
+#workspaces button:hover {
+    background: rgba(122, 162, 247, 0.5);
+    color: #1e1e2e;
+}
+
+/* Popup window for mouse tooltip text */
+tooltip {
+    background: #1e1e2e;
+    border: 1px solid #7aa2f7;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: #cdd6f4;
+}
+
+#clock {
+    background: #7aa2f7;
+    color: #1e1e2e;
+    font-weight: bold;
+}
+
+#custom-mediaplayer {
+    background: #b4befe;
+    color: #1e1e2e;
+    font-weight: bold;
+}
+
+#custom-launcher {
+    background: #f0c674; /* Set your preferred color */
+    color: #1e1e2e;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+#custom-wallpaper {
+    background: #94e2d5; /* Teal color for wallpaper module */
+    color: #1e1e2e;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+#disk {
+    background: #f5c2e7;
+    color: #1e1e2e;
+    font-weight: bold;
+}
+
+#disk.warning {
+    background: #f9e2af;
+}
+
+#disk.critical {
+    background: #f38ba8;
+    animation: blink 1s infinite alternate;
+}
+
+/* Special colors and styles for some */
+#cpu {
+    background: #f38ba8;
+    color: #1e1e2e;
+    /* Removed right border-radius */
+}
+
+#memory {
+    background: #fab387;
+    color: #1e1e2e;
+    /* Removed left border-radius */
+}
+
+#network {
+    background: #a6e3a1;
+    color: #1e1e2e; /* More visible color for the icon */
+    margin-right: 3px; /* Add spacing between modules */
+}
+
+#network.disconnected {
+    background: #fab387;
+    color: #f38ba8; /* make the icon red when disconnected */
+}
+
+#pulseaudio {
+    background: #89dceb;
+    color: #1e1e2e;
+    margin-right: 0px; /* Add spacing between modules */
+}
+
+#pulseaudio.muted {
+    color: #f38ba8;
+}
+
+#pulseaudio.muted * {
+    color: #f38ba8;
+}
+
+#tray {
+    background: #cba6f7; /* More obvious color */
+    padding: 0 10px; /* More spacing within the tray */
+    margin-right: 0px; /* Add spacing between modules */
+}
+
+#custom-powermenu {
+    background: #f38ba8;
+    color: #1e1e2e;
+    font-size: 16px;
+    padding: 0 12px; 
+    min-width: 12px;
+    font-weight: bold;
+}
+
+/* The small line seperation */
+#custom-separator {
+    color: #6c7086;
+    font-weight: normal;
+}
+
+/* Active or critical parts */
+#cpu.warning,
+#memory.warning {
+    background: #f9e2af;
+}
+
+#cpu.critical,
+#memory.critical {
+    animation: blink 1s infinite alternate;
+    background: #f38ba8;
+}
+
+@keyframes blink {
+    to {
+        background: #f5c2e7;
+    }
+}

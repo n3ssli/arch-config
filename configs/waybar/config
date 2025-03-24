@@ -1,0 +1,161 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 4,
+    "margin-top": 4,
+    "margin-left": 6,
+    "margin-right": 6,
+    "modules-left": [
+        "custom/launcher",
+        "custom/separator",
+        "hyprland/workspaces",
+        "custom/separator",
+        "custom/wallpaper",
+        "disk"
+    ],
+    "modules-center": [
+        "custom/mediaplayer"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "network",
+        "pulseaudio",
+        "tray",
+        "clock",
+        "custom/powermenu"
+    ],
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
+            "active": "",
+            "default": ""
+        },
+        "on-click": "activate",
+        "all-outputs": true,
+        "sort-by-number": true,
+        "persistent_workspaces": {
+            "1": ["DP-1"],
+            "2": ["DP-1"],
+            "3": ["DP-1"],
+            "4": ["DP-1"],
+            "5": ["DP-1"],
+            "6": ["HDMI-A-1"],
+            "7": ["HDMI-A-1"],
+            "8": ["HDMI-A-1"],
+            "9": ["HDMI-A-1"],
+            "10": ["HDMI-A-1"]
+        }
+    },
+    "custom/wallpaper": {
+        "format": "🖼️",
+        "on-click": "waypaper --random",
+        "on-click-right": "waypaper --wallpaper /home/nessli/Images/4K/696e9dfa1a3936bcbbe12ff28144939d-upscaled.png",
+        "tooltip": true,
+        "tooltip-format": "Left click: Random wallpaper | Right click: Set default wallpaper",
+        "interval": "once"
+    },
+    "disk": {
+        "interval": 30,
+        "format": "󰋊 {percentage_used}%",
+        "path": "/",
+        "tooltip": true,
+        "exec": "~/.config/waybar/disk-info.sh",
+        "return-type": "text",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+        "on-click": "baobab"
+    },
+    "custom/separator": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%Y-%m-%d}",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "cpu": {
+        "interval": 2,
+        "format": "󰻠 {usage}%",
+        "tooltip": true,
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+    "memory": {
+        "interval": 5,
+        "format": "󰍛 {percentage}%",
+        "tooltip-format": "{used:0.1f}GB/{total:0.1f}GB used",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+    "network": {
+        "format-wifi": "󰖩 {essid}",
+        "format-ethernet": "󰈀 Connected",
+        "format-disconnected": "󰅛 Disconnected",
+        "tooltip-format": "{ifname}\nIP: {ipaddr}/{cidr}\n⬇️ {bandwidthDownBytes} ⬆️ {bandwidthUpBytes}",
+        "interval": 1,
+        "on-click": "nm-connection-editor"
+    },
+    "custom/mediaplayer": {
+        "exec": "~/.config/waybar/mediaplayer.sh",
+        "format": "{}",
+        "return-type": "text",
+        "max-length": 40,
+        "on-click": "playerctl play-pause",
+        "on-click-middle": "playerctl previous",
+        "on-click-right": "playerctl next",
+        "interval": 1
+    },
+    "custom/powermenu": {
+        "format": "⏻",
+        "on-click": "wlogout -b 2 -c 3 -T 300 -B 300 -L 300 -R 300",
+        "tooltip": false
+    },
+    "custom/launcher": {
+        "format": "󰣇",
+        "on-click": "rofi -theme ~/.config/rofi/dark-menu.rasi -show drun"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "󰂰 {volume}%",
+        "format-bluetooth-muted": "󰂲 {volume}%",
+        "format-muted": "󰖁 {volume}%",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
+            "phone": "󰏲",
+            "portable": "󰄝",
+            "car": "󰄋",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
+        "tooltip": true,
+        "tooltip-format": "Device: {desc}\nVolume: {volume}%\nMuted: {muted}"
+    },
+    "tray": {
+        "spacing": 10
+    }
+}
