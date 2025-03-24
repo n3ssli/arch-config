@@ -5,22 +5,19 @@ Item {
     id: background
     anchors.fill: parent
     
-    // Properties for customization
     property string imagePath: "assets/background.jpg"
     property bool enableRainEffect: true
-    property bool enableVinylEffect: false  // Disabled by default now
+    property bool enableVinylEffect: false  
     property real overlayOpacity: 0.4
-    property bool blurBackground: true      // New property to enable blur
-    property int blurRadius: 30             // Blur intensity
+    property bool blurBackground: true      
+    property int blurRadius: 30             
     
-    // Main background image
     Image {
         id: backgroundImage
         anchors.fill: parent
         source: background.imagePath
         fillMode: Image.PreserveAspectCrop
         
-        // Apply blur if enabled (without requiring QtGraphicalEffects)
         layer.enabled: background.blurBackground
         layer.effect: ShaderEffect {
             property variant source: backgroundImage
@@ -47,7 +44,6 @@ Item {
             "
         }
         
-        // Subtle zoom animation for a "living" feel
         NumberAnimation on scale {
             from: 1.00
             to: 1.03
@@ -59,7 +55,6 @@ Item {
         }
     }
     
-    // Color grading effect - gives the lofi warm/cool tint
     Rectangle {
         id: colorGrading
         anchors.fill: backgroundImage
@@ -67,7 +62,6 @@ Item {
         opacity: 0.2
     }
     
-    // Film grain effect
     ShaderEffect {
         id: filmGrain
         anchors.fill: parent
@@ -99,10 +93,9 @@ Item {
         "
     }
     
-    // Vinyl record effect (creates subtle circular noise in corner)
     Item {
         id: vinylEffect
-        visible: background.enableVinylEffect  // This will be false based on property
+        visible: background.enableVinylEffect  
         width: parent.width * 0.2
         height: width
         anchors.right: parent.right
@@ -111,13 +104,11 @@ Item {
         opacity: 0.2
     }
     
-    // Rain effect
     Item {
         id: rainContainer
         anchors.fill: parent
         visible: background.enableRainEffect
         
-        // This component creates a single raindrop
         Component {
             id: raindrop
             
@@ -150,7 +141,6 @@ Item {
             }
         }
         
-        // Create many raindrops
         Timer {
             interval: 100
             running: background.enableRainEffect
@@ -164,14 +154,12 @@ Item {
         }
     }
     
-    // Final overlay for mood
     Rectangle {
         id: overlay
         anchors.fill: parent
         color: "#000000"
         opacity: background.overlayOpacity
         
-        // Gradient overlay for vignette effect
         gradient: Gradient {
             GradientStop { position: 0.0; color: Qt.rgba(0, 0, 0, 0.5) }
             GradientStop { position: 0.5; color: Qt.rgba(0, 0, 0, 0.1) }
