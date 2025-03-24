@@ -2,7 +2,7 @@ configuration {
     modi: "drun,run,window";
     font: "JetBrainsMono Nerd Font 12";
     show-icons: true;
-    icon-theme: "Papirus-Dark"; /* Adjust based on your icon theme */
+    icon-theme: "Papirus-Dark"; 
     terminal: "alacritty";
 }
 
@@ -38,7 +38,7 @@ prompt {
     padding: 8;
     text-color: #ff79c6;
     font: "Font Awesome 6 Free 12";
-    /* content: "   "; You may have to adjust */
+    /* content: "   "; 
     content: "->";
 }
 
