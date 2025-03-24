@@ -11,19 +11,17 @@ Rectangle {
     property string textColor: "#f8f8f2"
     property string inputFont: "monospace"  // Monospace font property
     
-    // Use the custom Background component instead of a simple Image
     Background {
         id: background
         anchors.fill: parent
         imagePath: "assets/background.jpg"
         enableRainEffect: true
-        enableVinylEffect: false  // Disable vinyl effect
+        enableVinylEffect: false  
         overlayOpacity: 0.3
-        blurBackground: true      // Enable background blur
-        blurRadius: 30            // Set blur intensity
+        blurBackground: true      
+        blurRadius: 30            
     }
     
-    // Clock display that floats on the top right - now with monospace font
     Item {
         anchors {
             top: parent.top
@@ -38,7 +36,7 @@ Rectangle {
             color: root.textColor
             font.pixelSize: 64
             font.weight: Font.Light
-            font.family: root.inputFont  // Changed to monospace
+            font.family: root.inputFont  
             
             Timer {
                 interval: 1000
@@ -59,12 +57,11 @@ Rectangle {
             text: Qt.formatDateTime(new Date(), "dddd, MMMM d")
             color: root.textColor
             font.pixelSize: 18
-            font.family: root.inputFont  // Changed to monospace
+            font.family: root.inputFont  
             opacity: 0.8
         }
     }
     
-    // Lofi-themed quote
     Text {
         id: quoteText
         anchors {
@@ -80,7 +77,6 @@ Rectangle {
         opacity: 0.7
     }
     
-    // Main login card
     Rectangle {
         id: loginCardBlur
         width: 420
@@ -315,7 +311,6 @@ Rectangle {
         sddm.login(usernameField.text, passwordField.text, sessionSelector.currentIndex)
     }
     
-    // Power buttons at the bottom right
     Row {
         anchors {
             right: parent.right
@@ -324,7 +319,6 @@ Rectangle {
         }
         spacing: 15
         
-        // Restart button
         Rectangle {
             width: 36
             height: 36
@@ -368,7 +362,6 @@ Rectangle {
             }
         }
         
-        // Sleep button
         Rectangle {
             width: 36
             height: 36
