@@ -1,4 +1,4 @@
-/* Reset all styles */
+/* style.css */
 * {
     border: none;
     border-radius: 0;
@@ -8,11 +8,8 @@
     margin: 0;
     min-height: 0;
     padding: 0;
-    /* You can use this to disable background by default all over bar */
-    /* background: transparent; */
 }
 
-/* The whole bar */
 window#waybar {
     background: rgba(30, 30, 46, 0.85);
     border-radius: 8px;
@@ -20,7 +17,7 @@ window#waybar {
     margin-top: 4px;
 }
 
-/* Each module on the bar */
+/* Modules*/
 #clock,
 #cpu,
 #custom-launcher,
@@ -37,7 +34,7 @@ window#waybar {
 #custom-powermenu {
     border-radius: 8px;
     margin: 5px 0px 5px 5px;
-    padding: 0 8px; /* Uniform padding */
+    padding: 0 8px; 
 }
 
 #custom-mediaplayer,
@@ -45,7 +42,6 @@ window#waybar {
     margin: 5px 5px 5px 0px;
 }
 
-/* Each module on the bar */
 #workspaces button {
     background: transparent;
     color: #cdd6f4;
@@ -64,7 +60,6 @@ window#waybar {
     color: #1e1e2e;
 }
 
-/* Popup window for mouse tooltip text */
 tooltip {
     background: #1e1e2e;
     border: 1px solid #7aa2f7;
@@ -88,14 +83,14 @@ tooltip label {
 }
 
 #custom-launcher {
-    background: #f0c674; /* Set your preferred color */
+    background: #f0c674; 
     color: #1e1e2e;
     font-size: 16px;
     padding: 0 10px;
 }
 
 #custom-wallpaper {
-    background: #94e2d5; /* Teal color for wallpaper module */
+    background: #94e2d5; 
     color: #1e1e2e;
     font-size: 16px;
     padding: 0 10px;
@@ -116,34 +111,31 @@ tooltip label {
     animation: blink 1s infinite alternate;
 }
 
-/* Special colors and styles for some */
 #cpu {
     background: #f38ba8;
     color: #1e1e2e;
-    /* Removed right border-radius */
 }
 
 #memory {
     background: #fab387;
     color: #1e1e2e;
-    /* Removed left border-radius */
 }
 
 #network {
     background: #a6e3a1;
-    color: #1e1e2e; /* More visible color for the icon */
-    margin-right: 3px; /* Add spacing between modules */
+    color: #1e1e2e; 
+    margin-right: 3px; 
 }
 
 #network.disconnected {
     background: #fab387;
-    color: #f38ba8; /* make the icon red when disconnected */
+    color: #f38ba8; 
 }
 
 #pulseaudio {
     background: #89dceb;
     color: #1e1e2e;
-    margin-right: 0px; /* Add spacing between modules */
+    margin-right: 0px; 
 }
 
 #pulseaudio.muted {
@@ -155,9 +147,9 @@ tooltip label {
 }
 
 #tray {
-    background: #cba6f7; /* More obvious color */
-    padding: 0 10px; /* More spacing within the tray */
-    margin-right: 0px; /* Add spacing between modules */
+    background: #cba6f7; 
+    padding: 0 10px; 
+    margin-right: 0px; 
 }
 
 #custom-powermenu {
@@ -169,13 +161,11 @@ tooltip label {
     font-weight: bold;
 }
 
-/* The small line seperation */
 #custom-separator {
     color: #6c7086;
     font-weight: normal;
 }
 
-/* Active or critical parts */
 #cpu.warning,
 #memory.warning {
     background: #f9e2af;
