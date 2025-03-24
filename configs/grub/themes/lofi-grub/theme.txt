@@ -1,0 +1,43 @@
+# Lofi GRUB theme
+
+# Global properties
+title-text: ""
+desktop-image: "background.png"
+desktop-color: "#2E3440"
+terminal-font: "Terminus Regular 14"
+terminal-box: "terminal_box_*.png"
+terminal-left: "-9999"
+terminal-top: "-9999"
+terminal-width: "1%"
+terminal-height: "1%"
+terminal-border: "0"
+
+# Boot menu
++ boot_menu {
+  left = 25%
+  top = 30%
+  width = 50%
+  height = 40%
+  item_font = "Terminus Regular 16"
+  item_color = "#D8DEE9"
+  selected_item_color = "#FFFFFF"
+  icon_width = 32
+  icon_height = 32
+  item_height = 40
+  item_spacing = 8
+  selected_item_pixmap_style = "select_c.png"
+}
+
+# Progress bar (updated)
++ progress_bar {
+  id = "__timeout__"
+  left = 25%
+  top = 75%
+  width = 50%
+  height = 20
+  show_text = false
+  bar_style = "progress_bar/progress_bar_c.png"
+  highlight_style = "progress_bar/progress_bar_hl.png"
+  highlight_overlay = true
+}
+

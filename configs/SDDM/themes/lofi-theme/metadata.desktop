@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Lofi Theme
+Comment=A relaxing lofi-inspired SDDM theme
+Type=X-SDDM-Theme
+Version=1.0
+Website=https://github.com/yourusername/lofi-sddm-theme
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Theme-Id=lofi-theme
+Theme-API=2.0

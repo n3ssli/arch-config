@@ -1,0 +1,83 @@
+configuration {
+    modi: "drun,run,window";
+    font: "JetBrainsMono Nerd Font 12";
+    show-icons: true;
+    icon-theme: "Papirus-Dark"; /* Adjust based on your icon theme */
+    terminal: "alacritty";
+}
+
+* {
+    background-color: #282a36;
+    text-color: #f8f8f2;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    width: 40%;
+    location: center;
+    anchor: center;
+    border: 2;
+    border-color: #44475a;
+    orientation: vertical;
+}
+
+mainbox {
+    padding: 10;
+    border: 0;
+    orientation: vertical;
+    children: [inputbar, listview];
+}
+
+inputbar {
+    children: [ prompt, entry ];
+}
+
+prompt {
+    padding: 8;
+    text-color: #ff79c6;
+    font: "Font Awesome 6 Free 12";
+    /* content: "   "; You may have to adjust */
+    content: "->";
+}
+
+entry {
+    padding: 8;
+    text-color: #f8f8f2;
+}
+
+listview {
+    cycle: false;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+}
+
+element {
+    padding: 8;
+    text-color: #f8f8f2;
+}
+
+element normal.urgent {
+    text-color: #ff5555;
+}
+
+element normal.active {
+    text-color: #bd93f9;
+}
+
+element selected {
+    background-color: #44475a;
+    text-color: #f8f8f2;
+}
+
+element selected.urgent {
+    background-color: #ff5555;
+    text-color: #f8f8f2;
+}
+
+element selected.active {
+    background-color: #bd93f9;
+    text-color: #f8f8f2;
+}
