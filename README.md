@@ -459,13 +459,13 @@ Build arch-config from the source and intsall dependencies:
 
 3. **Install the dependencies:**
 
-echo 'INSERT-INSTALL-COMMAND-HERE'
+*Coming soon!*
 
 ### 💻 Usage
 
 Run the project with:
 
-echo 'INSERT-RUN-COMMAND-HERE'
+*Coming soon!*
 
 ### 🧪 Testing
 
