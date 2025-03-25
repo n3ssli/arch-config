@@ -458,20 +458,18 @@ Build arch-config from the source and intsall dependencies:
     ```
 
 3. **Install the dependencies:**
-
-*Coming soon!*
+   
+   ```sh
+   ❯ Coming soon!
+   ```
 
 ### 💻 Usage
 
 Run the project with:
 
-*Coming soon!*
-
-### 🧪 Testing
-
-Arch-config uses the {__test_framework__} test framework. Run the test suite with:
-
-echo 'INSERT-TEST-COMMAND-HERE'
+```sh
+❯ Coming soon!
+```
 
 ---
 
